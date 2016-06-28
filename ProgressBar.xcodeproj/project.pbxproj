@@ -509,6 +509,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beanProgressBar;
 				PRODUCT_NAME = ProgressBar;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -538,6 +539,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beanProgressBar;
 				PRODUCT_NAME = ProgressBar;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -566,6 +568,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beanProgressBar;
 				PRODUCT_NAME = ProgressBar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -594,6 +597,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beanProgressBar;
 				PRODUCT_NAME = ProgressBar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
