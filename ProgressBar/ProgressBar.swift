@@ -88,8 +88,12 @@ public final class ProgressBar {
      You may optionally set the initial width.
      */
     public func start(from width: CGFloat = 0, for duration: Double) {
-        isProgressing = true
         fullDuration = duration
+        resume(for: duration)
+    }
+    
+    public func resume(from width: CGFloat = 0, for duration: Double) {
+        isProgressing = true
         lastResumedDuration = CACurrentMediaTime()
         configureLayer()
         animateLayer(for: duration, from: width, to: fullWidth)
