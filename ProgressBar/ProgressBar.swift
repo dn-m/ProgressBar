@@ -130,6 +130,7 @@ public final class ProgressBar {
         lastResumedDuration = CACurrentMediaTime()
         configureLayer(width: currentWidth)
         start(from: currentWidth, for: durationRemaining)
+        isProgressing = true
     }
     
     private func configureLayer(width width: CGFloat = 0) {
