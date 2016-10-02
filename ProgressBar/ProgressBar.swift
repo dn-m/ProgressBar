@@ -15,7 +15,7 @@ public final class ProgressBar {
     public lazy var layer: CALayer = CALayer()
     
     /// Time it takes to progress from start to finish.
-    private var fullDuration: Double = 0.0000001
+    fileprivate var fullDuration: Double = 0.0000001
     
     /// Origin of frame.
     public var origin: CGPoint = CGPoint.zero {
@@ -47,22 +47,22 @@ public final class ProgressBar {
     }
     
     // last duration at which the progress bar is static
-    private var lastResumedDuration: Double = 0
+    fileprivate var lastResumedDuration: Double = 0
     
     // duration currently progressed - set at time of pause
-    private var durationProgressed: Double = 0
+    fileprivate var durationProgressed: Double = 0
     
     // duration remaining between duration progressed and full duration
-    private var durationRemaining: Double { return fullDuration - durationProgressed }
+    fileprivate var durationRemaining: Double { return fullDuration - durationProgressed }
     
     // current position of progression (0...1.0)
-    private var currentPosition: Double { return durationProgressed / fullDuration }
+    fileprivate var currentPosition: Double { return durationProgressed / fullDuration }
     
     // the current width of the frame at pause - recovered at resume
-    private var currentWidth: CGFloat { return CGFloat(currentPosition) * fullWidth }
+    fileprivate var currentWidth: CGFloat { return CGFloat(currentPosition) * fullWidth }
     
     // if the bar is currently progressing
-    private var isProgressing: Bool = false
+    fileprivate var isProgressing: Bool = false
     
     /**
      Create a `ProgressBar`.
@@ -71,7 +71,7 @@ public final class ProgressBar {
         origin: CGPoint,
         fullWidth: CGFloat,
         height: CGFloat,
-        color: CGColorRef = CGColorCreate(CGColorSpaceCreateDeviceGray(), [1.0, 1.0])!,
+        color: CGColor = CGColor(colorSpace: CGColorSpaceCreateDeviceGray(), components: [1.0, 1.0])!,
         opacity: Float = 0.2
     )
     {
@@ -125,7 +125,7 @@ public final class ProgressBar {
         print("pause: full dur: \(fullDuration); dur prog: \(durationProgressed); cur pos: \(currentPosition); lastResumedDur: \(lastResumedDuration); currentWidth: \(currentWidth)")
         isProgressing = false
         durationProgressed += CACurrentMediaTime() - lastResumedDuration
-        guard let currentFrame = layer.presentationLayer()?.frame else { return }
+        guard let currentFrame = layer.presentation()?.frame else { return }
         layer.frame = currentFrame
         layer.speed = 0
     }
@@ -141,7 +141,7 @@ public final class ProgressBar {
         resume(from: currentWidth, for: durationRemaining)
     }
     
-    private func configureLayer(width width: CGFloat = 0) {
+    fileprivate func configureLayer(width: CGFloat = 0) {
         guard let superlayer = layer.superlayer else { return }
         layer.removeFromSuperlayer()
         layer = CALayer()
@@ -152,11 +152,11 @@ public final class ProgressBar {
         superlayer.addSublayer(layer)
     }
     
-    private func animateLayer(for duration: Double, from: CGFloat, to: CGFloat) {
+    fileprivate func animateLayer(for duration: Double, from: CGFloat, to: CGFloat) {
         let animation = CABasicAnimation(keyPath: "bounds.size.width")
         animation.duration = duration
         animation.fromValue = from
         animation.toValue = to
-        layer.addAnimation(animation, forKey: "bounds.size.width")
+        layer.add(animation, forKey: "bounds.size.width")
     }
 }
