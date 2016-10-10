@@ -1,8 +1,8 @@
 # ProgressBar
 
-[![Build Status](https://travis-ci.org/dn-m/DictionaryTools.svg?branch=master)](https://travis-ci.org/dn-m/ProgressBar)
+[![Build Status](https://travis-ci.org/dn-m/ProgressBar.svg?branch=master)](https://travis-ci.org/dn-m/ProgressBar)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
-[![GitHub version](https://badge.fury.io/gh/dn-m%2FDictionaryTools.svg)](https://badge.fury.io/gh/dn-m%2FProgressBar)
+[![GitHub version](https://badge.fury.io/gh/dn-m%2FProgressBar.svg)](https://badge.fury.io/gh/dn-m%2FProgressBar)
 
 <a name="integration"></a>
 ## Integration
